@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <title>Learning process</title>
+  </head>
+
+  <body>
+    
+    <div>
+      <h3>
+        1. Students and lectures count
+      </h3>
+      {% for student, count in students_lectures_counts %}
+      <p>
+        {{ student }}: {{ count }}
+      </p>
+      {% endfor %}
+    </div>
+
+    <div>
+      <h3>
+        2. {{ most_popular_lectures.number }} most popular lectures
+      </h3>
+        {% for lecture, count in most_popular_lectures.lectures %}
+        <p>
+          {{ lecture }}, count: {{ count }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div>
+      <h3>
+        3. {{ most_popular_lectures.number }} most unpopular lectures
+      </h3>
+        {% for lecture, count in most_unpopular_lectures.lectures %}
+        <p>
+          {{ lecture }}, count: {{ count }}
+        </p>
+        {% endfor %}
+    </div>
+
+    <div>
+      <h3>
+        4. Lectures with views greater than average
+      </h3>
+      {% for lecture in lectures_popular_than_avg %}
+      <p>
+        {{ lecture }}
+      </p>
+      {% endfor %}
+    </div>
+
+    <div>
+      <h3>
+        5. Lectures in courses that will be held in current year
+      </h3>
+      {% for lecture in lectures_in_current_year %}
+      <p>
+        {{ lecture }}
+      </p>
+      {% endfor %}
+    </div>
+
+    <div>
+      <h3>
+        6. Average students birth year by courses
+      </h3>
+      {% for course, year in students_year_avg_by_courses %}
+      <p>
+        {{ course }}, <b>year:</b> {{ year }}
+      </p>
+      {% endfor %}
+    </div>
+
+    <div>
+      <h3>
+        7. Mails of students that haven't watched most unpopular lecture
+      </h3>
+      {% for mail in mails_students_notviewed_unpopular_lecture %}
+      <p>
+        {{ mail }}
+      </p>
+      {% endfor %}
+    </div>
+
+    <div>
+      <h3>
+        8. Count of lectures with viewers greater than two: {{ cnt_lectures_with_viewers_gt_than_two }}
+      </h3>
+    </div>
+
+  </body>
+</html>
